@@ -1,7 +1,19 @@
 const quizContainer = document.getElementById('quiz')
 const resultsContainer = document.getElementById('results')
 const submitButton = document.getElementById('submit')
+const startBtn = document.getElementById('start-quiz')
+const game = document.querySelector('.container')
 
+function startQuiz() {
+  startBtn.style.display = 'none';
+  game.style.display = 'block'
+}
+
+function resetQuiz () {
+  
+}
+
+startBtn.addEventListener('click', startQuiz)
 
 const quizGame = [
   {
@@ -81,3 +93,6 @@ const quizGame = [
   submitButton.addEventListener('click', showResults)
 
   buildQuiz()
+
+
+

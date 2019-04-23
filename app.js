@@ -3,17 +3,33 @@ const resultsContainer = document.getElementById('results')
 const submitButton = document.getElementById('submit')
 const startBtn = document.getElementById('start-quiz')
 const game = document.querySelector('.container')
+const resetBtn = document.querySelector('.reset-game')
 
 function startQuiz() {
   startBtn.style.display = 'none';
   game.style.display = 'block'
 }
 
-function resetQuiz () {
-  
-}
+// function resetQuiz() {
+//   const output = [];
 
-startBtn.addEventListener('click', startQuiz)
+//   quizGame.forEach((currentQuestion, questionNumber) => {
+//     const answers = [];
+
+//     for (letter in currentQuestion.answers) {
+//       answers.push(`<label>
+//                       <input type="radio" name="question${questionNumber}" value="${letter}">
+//                       ${letter} :
+//                       ${currentQuestion.answers[letter]}
+//                       </label>`)
+//     }
+//     output.push(`<div class="question"> ${currentQuestion.question} </div>
+//                   <div class="answers"> ${answers.join('')} </div>`)
+//     console.log(currentQuestion)
+//   })
+//   quizContainer.innerHTML = output.join('')
+//   resultsContainer.style.display = 'none'
+// }
 
 const quizGame = [
   {
@@ -64,9 +80,9 @@ const quizGame = [
       }
       output.push(`<div class="question"> ${currentQuestion.question} </div>
                   <div class="answers"> ${answers.join('')} </div>`)
-                  console.log(currentQuestion)
     })
     quizContainer.innerHTML = output.join('')
+    resultsContainer.style.display = 'none'
   }
 
 
@@ -88,7 +104,12 @@ const quizGame = [
       }
     })
     resultsContainer.innerHTML = numCorrect + ' out of ' + quizGame.length;
+    resultsContainer.style.display = 'block'
   }
+
+  startBtn.addEventListener('click', startQuiz)
+
+  resetBtn.addEventListener('click', buildQuiz)
 
   submitButton.addEventListener('click', showResults)
 

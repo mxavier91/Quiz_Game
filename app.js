@@ -10,27 +10,6 @@ function startQuiz() {
   game.style.display = 'block'
 }
 
-// function resetQuiz() {
-//   const output = [];
-
-//   quizGame.forEach((currentQuestion, questionNumber) => {
-//     const answers = [];
-
-//     for (letter in currentQuestion.answers) {
-//       answers.push(`<label>
-//                       <input type="radio" name="question${questionNumber}" value="${letter}">
-//                       ${letter} :
-//                       ${currentQuestion.answers[letter]}
-//                       </label>`)
-//     }
-//     output.push(`<div class="question"> ${currentQuestion.question} </div>
-//                   <div class="answers"> ${answers.join('')} </div>`)
-//     console.log(currentQuestion)
-//   })
-//   quizContainer.innerHTML = output.join('')
-//   resultsContainer.style.display = 'none'
-// }
-
 const quizGame = [
   {
     question: "What is the name of Boston's Baseball team?",
@@ -61,6 +40,74 @@ const quizGame = [
       d: "Deku"
     },
     correctAnswer: "c"
+  },
+  {
+    question: "Which of these people DID NOT have the title Captain America?",
+    answers: {
+      a: "Natsha Romanoff",
+      b: "Sam Wilson",
+      c: "Bucky Barnes",
+      d: "Steve Rodgers"
+    },
+    correctAnswer: "a"
+  },
+  {
+    question: "JavaScript and Java are the same thing",
+    answers: {
+      a: "True",
+      b: "False"
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "What is the name of NFL trophy?",
+    answers: {
+      a: "Larry O'Bryant",
+      b: "Vince Lombradi",
+      c: "Football trophy ",
+      d: "Patriots"
+    },
+    correctAnswer: "b"
+  },
+  {
+    question: "Where did Assasin's Creed 3 take place?",
+    answers: {
+      a: "The America Revolution",
+      b: "Italy",
+      c: "Eygpt",
+      d: "Greece"
+    },
+    correctAnswer: "a"
+  },
+  {
+    question: "Which of these is a JavaScript Data Type?",
+    answers: {
+      a: "numbers",
+      b: "strings",
+      c: "objects",
+      d: "All be above"
+    },
+    correctAnswer: "d"
+  },
+  {
+    question: "Which popular anime began as a web manga, and the protaginist is known for their non-chalant attitude?",
+    answers: {
+      a: "Naruto",
+      b: "The Rising Sheild Hero",
+      c: "One Punch Man",
+      d: "Fairy Gone"
+    },
+    correctAnswer: "c"
+  },
+  {
+    question: "In 2014, who took the mantle as Thor?",
+    answers: {
+      a: "Captain America",
+      b: "Jane Foster",
+      c: "DareDevil",
+      d: "Black Panther"
+    },
+    correctAnswer: "b"
   }
 ]
 
@@ -78,8 +125,10 @@ const quizGame = [
                       ${currentQuestion.answers[letter]}
                       </label>`)
       }
-      output.push(`<div class="question"> ${currentQuestion.question} </div>
-                  <div class="answers"> ${answers.join('')} </div>`)
+      output.push(`<div id="page-${questionNumber}" class='page'>
+                    <div class="question"> ${currentQuestion.question} </div>
+                    <div class="answers"> ${answers.join('')} </div>
+                  </div>`)
     })
     quizContainer.innerHTML = output.join('')
     resultsContainer.style.display = 'none'
@@ -114,6 +163,8 @@ const quizGame = [
   submitButton.addEventListener('click', showResults)
 
   buildQuiz()
+
+
 
 
 

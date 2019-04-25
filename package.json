@@ -1,0 +1,23 @@
+{
+  "name": "Quiz_Game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxavier91/Quiz_Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mxavier91/Quiz_Game/issues"
+  },
+  "homepage": "https://mxavier91.github.io/Quiz_Game",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
+}
